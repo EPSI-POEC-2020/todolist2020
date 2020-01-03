@@ -6,6 +6,7 @@ public class Task {
 
 	private String label;
 	private Date startDate;
+	private Todolist todolist;
 
 	public String getLabel() {
 		return this.label;
@@ -21,6 +22,14 @@ public class Task {
 
 	public void setStartDate(Date startDate) {
 		this.startDate = startDate;
+	}
+
+	public Todolist getTodolist() {
+		return this.todolist;
+	}
+
+	public void setTodolist(Todolist todolist) {
+		this.todolist = todolist;	
 	}
 
 }

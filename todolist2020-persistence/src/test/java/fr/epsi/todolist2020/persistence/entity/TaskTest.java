@@ -2,41 +2,56 @@ package fr.epsi.todolist2020.persistence.entity;
 
 import static org.junit.Assert.assertTrue;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
+import org.apache.commons.collections4.CollectionUtils;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class TaskTest {
-	
-	private static final String FRENCH_DATE_FORMAT = "dd/MM/yyyy";
-	private static final String START_DATE_IN_THE_FUTURE = "03/01/2020";
+
 	private static final String TASK_LABEL = "Je suis une tâche";
 	static Task task = new Task();
-	
+	private static Calendar startDateInFuture = Calendar.getInstance();
+	private static Todolist todolist = new Todolist();
+
 	@BeforeClass
-	public static void setUp () throws ParseException {
-		task.setStartDate(new SimpleDateFormat(FRENCH_DATE_FORMAT).parse(START_DATE_IN_THE_FUTURE));
+	public static void setUp(){
+		startDateInFuture.add(Calendar.DATE, 1);
+		task.setStartDate(startDateInFuture.getTime());
 		task.setLabel(TASK_LABEL);
+		task.setTodolist(todolist);
+		todolist.getTasks().add(task);
 	}
 
 	@Test
 	public void testTaskGotAName() {
-		
+
 		assertTrue(task.getLabel() != null);
 	}
-	
+
 	@Test
 	public void testTaskHasStartDate() {
-		
+
 		assertTrue(task.getStartDate() != null);
+	}
+
+	@Test
+	public void testTaskHasStartDateNotInThePast() {
+
+		assertTrue(task.getStartDate().after(new Date()));
 	}
 	
 	@Test
-	public void testTaskHasStartDateNotInThePast() {
+	public void testTaskHasATodolist() {
 		
-		assertTrue(task.getStartDate().after(new Date()));
+		assertTrue(task.getTodolist() != null);
+	}
+	
+	@Test
+	public void testTaskIsInATodolist() {
+	
+		assertTrue(CollectionUtils.isNotEmpty(task.getTodolist().getTasks()));
 	}
 }
