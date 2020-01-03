@@ -5,9 +5,12 @@ import static org.junit.Assert.assertTrue;
 import java.util.Calendar;
 import java.util.Date;
 
-import org.apache.commons.collections4.CollectionUtils;
+import org.apache.commons.collections.CollectionUtils;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 public class TaskTest {
 

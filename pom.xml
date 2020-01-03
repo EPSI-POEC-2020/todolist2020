@@ -13,18 +13,167 @@
 		<module>todolist2020-service</module>
 		<module>todolist2020-api</module>
 	</modules>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<spring.data.version>1.8.2.RELEASE</spring.data.version>
+		<junit.version>4.12</junit.version>
+		<mysql.connector.version>5.1.36</mysql.connector.version>
+		<spring.framework.version>4.0.9.RELEASE</spring.framework.version>
+		<hibernate.version>4.3.10.Final</hibernate.version>
+		<hibernate.jpa.version>1.0.1.Final</hibernate.jpa.version>
+		<java.version>1.7</java.version>
+		<hsqldb.version>2.3.3</hsqldb.version>
+		<bonecp.version>0.8.0.RELEASE</bonecp.version>
+		<java.servlet.version>2.5</java.servlet.version>
+		<maven.compiler.plugin.version>3.3</maven.compiler.plugin.version>
+	</properties>
+
 	<dependencyManagement>
 		<dependencies>
+			<!-- TODOLIST PERSISTENCE -->
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>todolist-persistence</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<!-- TODOLIST SERVICE -->
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>todolist-service</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<!-- SPRING DATA -->
+			<dependency>
+				<groupId>org.springframework.data</groupId>
+				<artifactId>spring-data-jpa</artifactId>
+				<version>${spring.data.version}</version>
+			</dependency>
+			<!-- JUnit testing framework -->
 			<dependency>
 				<groupId>junit</groupId>
 				<artifactId>junit</artifactId>
-				<version>4.12</version>
+				<version>${junit.version}</version>
 				<scope>test</scope>
 			</dependency>
+			<!-- MySQL database driver -->
 			<dependency>
-				<groupId>org.apache.commons</groupId>
-				<artifactId>commons-collections4</artifactId>
-				<version>4.4</version>
+				<groupId>mysql</groupId>
+				<artifactId>mysql-connector-java</artifactId>
+				<version>${mysql.connector.version}</version>
+			</dependency>
+			<!-- DATABASE POOL -->
+			<dependency>
+				<groupId>com.jolbox</groupId>
+				<artifactId>bonecp</artifactId>
+				<version>${bonecp.version}</version>
+			</dependency>
+			<!-- HSQLDB -->
+			<dependency>
+				<groupId>org.hsqldb</groupId>
+				<artifactId>hsqldb</artifactId>
+				<version>${hsqldb.version}</version>
+			</dependency>
+			<!-- Hibernate Framework -->
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-core</artifactId>
+				<version>${hibernate.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-entitymanager</artifactId>
+				<version>${hibernate.version}</version>
+			</dependency>
+			<!-- Hibernate library dependecy start -->
+			<dependency>
+				<groupId>dom4j</groupId>
+				<artifactId>dom4j</artifactId>
+				<version>1.6.1</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-logging</groupId>
+				<artifactId>commons-logging</artifactId>
+				<version>1.1.1</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-collections</groupId>
+				<artifactId>commons-collections</artifactId>
+				<version>3.2.1</version>
+			</dependency>
+			<dependency>
+				<groupId>antlr</groupId>
+				<artifactId>antlr</artifactId>
+				<version>2.7.7</version>
+			</dependency>
+			<dependency>
+				<groupId>log4j</groupId>
+				<artifactId>log4j</artifactId>
+				<version>1.2.17</version>
+			</dependency>
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-log4j12</artifactId>
+				<version>1.7.12</version>
+			</dependency>
+			<!-- Hibernate library dependecy end -->
+			<!-- Spring framework -->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-core</artifactId>
+				<version>${spring.framework.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-test</artifactId>
+				<version>${spring.framework.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-context</artifactId>
+				<version>${spring.framework.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-context-support</artifactId>
+				<version>${spring.framework.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-beans</artifactId>
+				<version>${spring.framework.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-expression</artifactId>
+				<version>${spring.framework.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-jdbc</artifactId>
+				<version>${spring.framework.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-webmvc</artifactId>
+				<version>${spring.framework.version}</version>
+			</dependency>
+			<!-- Servlet -->
+			<dependency>
+				<groupId>javax.servlet</groupId>
+				<artifactId>servlet-api</artifactId>
+				<version>${java.servlet.version}</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>jstl</groupId>
+				<artifactId>jstl</artifactId>
+				<version>1.2</version>
+			</dependency>
+			<dependency>
+				<groupId>taglibs</groupId>
+				<artifactId>standard</artifactId>
+				<version>1.1.2</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
