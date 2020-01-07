@@ -10,52 +10,35 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="todolist")
-public class Todolist {
+@Table(name="user")
+public class User {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="id_todolist")
+	@Column(name="id_user")
 	private long id;
 	
-	@Column
+	@Column(length=100, nullable = false)
 	private String name;
+	
+	@Column
+	private String surname;
 
 	@OneToMany(fetch = FetchType.LAZY)
-	@JoinColumn(name="id_todolist")
-	private List<Task> tasks = new ArrayList<Task>();
-	
-	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name="id_user")
-	private User user;
+	private List<Todolist> todolists = new ArrayList<Todolist>();
 
-	public List<Task> getTasks() {
-		return this.tasks ;
+	public List<Todolist> getTodolists() {
+		return todolists;
 	}
 
-	public long getId() {
-		return id;
+	public void setTodolists(List<Todolist> todolists) {
+		this.todolists = todolists;
 	}
-
-	public void setId(long id) {
-		this.id = id;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public void setTasks(List<Task> tasks) {
-		this.tasks = tasks;
-	}
-
+	
+	
 }
