@@ -1,6 +1,9 @@
 package fr.epsi.todolist2020.persistence.repository;
 
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
+
+import java.util.Date;
 
 import org.apache.commons.collections.CollectionUtils;
 import org.junit.Test;
@@ -29,6 +32,11 @@ public class TaskRepositoryTest {
 	@Test
 	public void testFindAllTasksDone() {
 		assertTrue(CollectionUtils.isNotEmpty(taskRepository.findByStatus(true)));
+	}
+	
+	@Test
+	public void testFindByStatusAndStartDateLessThan() {
+		assertFalse(CollectionUtils.isEmpty(taskRepository.findByStatusAndStartDateLessThan(false, new Date())));
 	}
 
 }
