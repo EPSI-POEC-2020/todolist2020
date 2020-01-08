@@ -13,10 +13,5 @@
     <class-a>fr.epsi.todolist2020.persistence.entity.User</class-a>
     <class-b>fr.epsi.todolist2020.service.bo.UserBO</class-b>   
   </mapping>
-  
-  <mapping> 
-    <class-a>fr.epsi.todolist2020.service.bo.UserBO</class-a>
-    <class-b>fr.epsi.todolist2020.api.vo.UserVO</class-b>   
-  </mapping>
 
 </mappings> 

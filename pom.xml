@@ -35,13 +35,13 @@
 			<!-- TODOLIST PERSISTENCE -->
 			<dependency>
 				<groupId>${project.groupId}</groupId>
-				<artifactId>todolist-persistence</artifactId>
+				<artifactId>todolist2020-persistence</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<!-- TODOLIST SERVICE -->
 			<dependency>
 				<groupId>${project.groupId}</groupId>
-				<artifactId>todolist-service</artifactId>
+				<artifactId>todolist2020-service</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<!-- SPRING DATA -->
