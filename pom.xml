@@ -17,7 +17,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<spring.data.version>1.8.2.RELEASE</spring.data.version>
-		<junit.version>4.12</junit.version>
+		<junit.version>4.13.1</junit.version>
 		<mysql.connector.version>5.1.36</mysql.connector.version>
 		<spring.framework.version>4.0.9.RELEASE</spring.framework.version>
 		<hibernate.version>4.3.10.Final</hibernate.version>
